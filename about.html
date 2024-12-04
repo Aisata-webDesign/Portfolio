@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Sunny Studio</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #fffbf1;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        header {
+            background-color: #ffe8f1;
+            padding: 20px;
+            border-bottom: 2px solid #ff92c2;
+            text-align: center;
+        }
+
+        .logo {
+            width: 100px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            font-size: 1.8rem;
+            color: #333;
+        }
+
+        nav ul li a:hover {
+            color: #ff92c2;
+        }
+
+        /* About Me Section */
+        .about-me {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 50px 20px;
+            text-align: center;
+            background: #F2FFFE;
+        }
+
+        .about-me h1 {
+            font-size: 5rem;
+            color: #ff92c2;
+            margin-bottom: 20px;
+        }
+
+        .about-me img {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            border: 8px solid #ff92c2;
+            margin-bottom: 30px;
+        }
+
+        .about-me p {
+            font-size: 1.8rem;
+            line-height: 1.8;
+            max-width: 800px;
+            margin-bottom: 30px;
+            color: #555;
+        }
+
+        .about-me button {
+            padding: 15px 40px;
+            background-color: #ff92c2;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .about-me button:hover {
+            background-color: #ff5fa0;
+        }
+
+        /* Overlay Styling */
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .overlay-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            color: #fff;
+            text-align: left;
+        }
+
+        .overlay img {
+            max-width: 60%; /* Keeps resume image larger */
+            max-height: 90%;
+            border: 5px solid #ff92c2;
+            border-radius: 8px;
+        }
+
+        .overlay .text {
+            max-width: 30%;
+            font-size: 1.2rem; /* Much smaller font size */
+            line-height: 1.4;
+        }
+
+        .overlay .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: #ff92c2;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .overlay .close-btn:hover {
+            background-color: #ff5fa0;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #ffe8f1;
+            padding: 30px;
+            text-align: center;
+        }
+
+        footer .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            max-width: 1400px;
+            margin: auto;
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        footer ul li {
+            margin: 10px 0;
+        }
+
+        footer ul li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 1.8rem;
+        }
+
+        footer .back-to-top {
+            padding: 20px 40px;
+            background-color: #ff92c2;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.8rem;
+        }
+
+        footer .back-to-top:hover {
+            background-color: #ff5fa0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <img src="logo.png" alt="Logo" class="logo">
+        <nav>
+            <ul>
+                <li><a href="homepage.html">home</a></li>
+                <li><a href="about.html">about me</a></li>
+                <li><a href="work.html">my work</a></li>
+                <li><a href="contact.html">contact me</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- About Me Section -->
+    <section class="about-me">
+        <h1>About Me</h1>
+        <img src="headshot.png" alt="Profile Picture">
+        <p>
+            Hello! My name is Aisata Ba. I am a 20-year-old college student at La Salle University, majoring in Digital Arts and minoring in English. 
+            I love using my art to tell stories and to express what words cannot. I also enjoy experimenting with videography and animation. 
+            A long-term goal of mine is to direct my own film someday!
+        </p>
+        <button onclick="openOverlay()">View Resume</button>
+    </section>
+
+    <!-- Resume Overlay -->
+    <div class="overlay" id="resumeOverlay">
+        <button class="close-btn" onclick="closeOverlay()">Close</button>
+        <div class="overlay-content">
+            <img src="resume.png" alt="Resume">
+            <div class="text">
+                <p>Don’t mean to toot my own horn, but I’ve done a lot of things--and I’m just getting started!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-content">
+            <div class="sitemap">
+                <h3>Sitemap:</h3>
+                <ul>
+                    <li><a href="homepage.html">home</a></li>
+                    <li><a href="about.html">about + resume</a></li>
+                    <li><a href="work.html">my work</a></li>
+                    <li><a href="contact.html">contact me</a></li>
+                </ul>
+            </div>
+            <div class="socials">
+                <h3>Follow Me:</h3>
+                <ul>
+                    <li><a href="https://www.instagram.com/sxnnystudio/">Instagram</a></li>
+                    <li><a href="https://www.tiktok.com/@a.xsata">TikTok</a></li>
+                </ul>
+            </div>
+        </div>
+        <button class="back-to-top" onclick="scrollToTop()">Back to Top</button>
+    </footer>
+
+    <!-- JavaScript for Back to Top and Overlay -->
+    <script>
+        function openOverlay() {
+            document.getElementById("resumeOverlay").style.display = "flex";
+        }
+
+        function closeOverlay() {
+            document.getElementById("resumeOverlay").style.display = "none";
+        }
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+    </script>
+</body>
+</html>
