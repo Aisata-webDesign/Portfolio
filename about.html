@@ -4,53 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me - Sunny Studio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Micro+5&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* General Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
             font-family: 'Courier New', Courier, monospace;
             background-color: #fffbf1;
             color: #333;
-            overflow-x: hidden;
         }
 
-        /* Header */
-        header {
-            background-color: #ffe8f1;
-            padding: 20px;
-            border-bottom: 2px solid #ff92c2;
-            text-align: center;
-        }
-
-        .logo {
-            width: 100px;
-            height: auto;
-            margin-bottom: 10px;
-        }
-
-        nav ul {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-            gap: 30px;
+        h1, h2, h3 {
+            font-family: 'Micro 5', sans-serif;
         }
 
         nav ul li a {
+            color: #ff92c2 !important;
             text-decoration: none;
-            font-size: 1.8rem;
-            color: #333;
+            font-size: 2rem;
         }
 
-        nav ul li a:hover {
-            color: #ff92c2;
+        nav ul li a.active {
+            font-weight: bold;
+            color: #ff76b0 !important;
         }
 
-        /* About Me Section */
         .about-me {
             min-height: 100vh;
             display: flex;
@@ -98,7 +76,6 @@
             background-color: #ff5fa0;
         }
 
-        /* Overlay Styling */
         .overlay {
             display: none;
             position: fixed;
@@ -117,21 +94,21 @@
             flex-wrap: wrap;
             justify-content: center;
             align-items: center;
-            gap: 30px;
+            gap: 10px;
             color: #fff;
             text-align: left;
         }
 
         .overlay img {
-            max-width: 60%; /* Keeps resume image larger */
-            max-height: 90%;
-            border: 5px solid #ff92c2;
+            max-width: 30%;
+            max-height: 50%;
+            border: 4px solid #ff92c2;
             border-radius: 8px;
         }
 
         .overlay .text {
-            max-width: 30%;
-            font-size: 1.2rem; /* Much smaller font size */
+            max-width: 15%;
+            font-size: 0.9rem;
             line-height: 1.4;
         }
 
@@ -141,8 +118,8 @@
             right: 20px;
             background-color: #ff92c2;
             color: white;
-            padding: 10px 20px;
-            font-size: 1.2rem;
+            padding: 8px 16px;
+            font-size: 1rem;
             border: none;
             border-radius: 8px;
             cursor: pointer;
@@ -152,64 +129,55 @@
             background-color: #ff5fa0;
         }
 
-        /* Footer */
         footer {
-            background-color: #ffe8f1;
-            padding: 30px;
-            text-align: center;
+            background: linear-gradient(180deg, #ffe8f1 0%, #fffbf1 100%);
+            padding: 50px 20px;
         }
 
-        footer .footer-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            max-width: 1400px;
-            margin: auto;
-        }
-
-        footer ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        footer ul li {
-            margin: 10px 0;
+        footer h3 {
+            color: #ff92c2;
         }
 
         footer ul li a {
+            color: #ff92c2 !important;
             text-decoration: none;
-            color: #333;
-            font-size: 1.8rem;
         }
 
-        footer .back-to-top {
-            padding: 20px 40px;
+        footer ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            padding: 10px 20px;
             background-color: #ff92c2;
             color: white;
             border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 1.8rem;
+            border-radius: 5px;
         }
 
-        footer .back-to-top:hover {
-            background-color: #ff5fa0;
+        .back-to-top:hover {
+            background-color: #ff76b0;
         }
     </style>
 </head>
 <body>
     <!-- Header Section -->
-    <header>
-        <img src="logo.png" alt="Logo" class="logo">
-        <nav>
-            <ul>
-                <li><a href="homepage.html">home</a></li>
-                <li><a href="about.html">about me</a></li>
-                <li><a href="work.html">my work</a></li>
-                <li><a href="contact.html">contact me</a></li>
-            </ul>
-        </nav>
+    <header class="bg-light py-3 border-bottom">
+        <div class="container text-center">
+            <img src="logo.png" alt="Sunny Studio Logo" class="img-fluid" style="max-width: 300px;">
+            <nav>
+                <ul class="nav justify-content-center">
+                    <li class="nav-item"><a class="nav-link" href="homepage.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="about.html">About Me</a></li>
+                    <li class="nav-item"><a class="nav-link" href="work.html">My Work</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact Me</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <!-- About Me Section -->
@@ -236,36 +204,40 @@
     </div>
 
     <!-- Footer Section -->
-    <footer>
-        <div class="footer-content">
-            <div class="sitemap">
-                <h3>Sitemap:</h3>
-                <ul>
-                    <li><a href="homepage.html">home</a></li>
-                    <li><a href="about.html">about + resume</a></li>
-                    <li><a href="work.html">my work</a></li>
-                    <li><a href="contact.html">contact me</a></li>
-                </ul>
+    <footer class="text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>Sitemap:</h3>
+                    <ul class="list-unstyled">
+                        <li><a href="homepage.html">Home</a></li>
+                        <li><a href="about.html">About + Resume</a></li>
+                        <li><a href="work.html">My Work</a></li>
+                        <li><a href="contact.html">Contact Me</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h3>Follow Me:</h3>
+                    <ul class="list-unstyled">
+                        <li><a href="https://www.instagram.com/sxnnystudio/"><i class="fab fa-instagram"></i> Instagram</a></li>
+                        <li><a href="https://www.tiktok.com/@a.xsata"><i class="fab fa-tiktok"></i> TikTok</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="socials">
-                <h3>Follow Me:</h3>
-                <ul>
-                    <li><a href="https://www.instagram.com/sxnnystudio/">Instagram</a></li>
-                    <li><a href="https://www.tiktok.com/@a.xsata">TikTok</a></li>
-                </ul>
-            </div>
+            <button class="back-to-top mt-4" onclick="scrollToTop()">Back to Top</button>
         </div>
-        <button class="back-to-top" onclick="scrollToTop()">Back to Top</button>
     </footer>
 
     <!-- JavaScript for Back to Top and Overlay -->
     <script>
         function openOverlay() {
             document.getElementById("resumeOverlay").style.display = "flex";
+            document.body.style.overflow = "hidden"; // Disable scrolling
         }
 
         function closeOverlay() {
             document.getElementById("resumeOverlay").style.display = "none";
+            document.body.style.overflow = "auto"; // Re-enable scrolling
         }
 
         function scrollToTop() {
@@ -275,5 +247,6 @@
             });
         }
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

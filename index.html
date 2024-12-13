@@ -4,17 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sunny Studio</title>
-
-    <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 
     <style>
         body {
             margin: 0;
-            background-color: #FFF5FD; 
+            background-color: #FFF5FD; /* Light beige background */
             font-family: 'Press Start 2P', cursive;
             height: 100vh;
             display: flex;
@@ -25,11 +21,11 @@
         /* Animation Section */
         .animation-wrapper {
             position: relative;
-            width: 25vw; 
-            height: 25vw; 
-            max-width: 300px; 
+            width: 25vw; /* Scales with screen width */
+            height: 25vw; /* Maintains a square shape */
+            max-width: 300px; /* Limits maximum size */
             max-height: 300px;
-            min-width: 150px; 
+            min-width: 150px; /* Ensures it doesn't shrink too much */
             min-height: 150px;
             border-radius: 50%;
             background-color: #fffdf2;
@@ -39,22 +35,22 @@
             justify-content: center;
             overflow: hidden;
             transition: transform 0.5s ease, width 0.5s ease, height 0.5s ease;
-            cursor: pointer; 
+            cursor: pointer; /* Makes the circle clickable */
         }
 
         .sunny-icon {
-            width: 70%; 
+            width: 70%; /* Relative to the wrapper */
             height: auto;
-            transition: transform 0.5s ease; 
+            transition: transform 0.5s ease; /* Smooth transition */
         }
 
         /* Combined scale and spin effect on hover */
         .animation-wrapper:hover .sunny-icon {
-            transform: rotate(360deg) scale(1.2);  */
+            transform: rotate(360deg) scale(1.2); /* Spins and grows the logo */
         }
 
         .animation-wrapper:hover {
-            transform: scale(1.5); 
+            transform: scale(1.5); /* Makes the animation wrapper bigger */
         }
 
         /* Media Queries for Responsiveness */
@@ -91,7 +87,7 @@
         // Add click event to the animation-wrapper
         document.getElementById("logo").addEventListener("click", function () {
             // Redirect to the homepage
-            window.location.href = "homepage.html"; 
+            window.location.href = "homepage.html"; // Redirect to "homepage.html"
         });
     </script>
 </body>

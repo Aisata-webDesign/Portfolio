@@ -3,15 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Work 6 - Sunny Studio</title>
+    <title>Sushi for Breakfast</title>
+    <link href="https://fonts.googleapis.com/css2?family=Micro+5&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* General Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
             font-family: 'Courier New', Courier, monospace;
             background-color: #fffbf1;
@@ -19,45 +15,22 @@
             overflow-x: hidden;
         }
 
-        /* Header */
-        header {
-            background-color: #ffe8f1;
-            padding: 20px;
-            border-bottom: 2px solid #ff92c2;
-            text-align: center;
-        }
-
-        .logo {
-            width: 100px;
-            height: auto;
-            margin-bottom: 10px;
-        }
-
-        nav ul {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-            gap: 30px;
+        h1, h2, h3 {
+            font-family: 'Micro 5', sans-serif;
         }
 
         nav ul li a {
+            color: #ff92c2 !important;
             text-decoration: none;
             font-size: 1.8rem;
-            color: #333;
         }
 
-        nav ul li a:hover {
-            color: #ff92c2;
-        }
-
-        /* Main Artwork Section */
-        .main-artwork {
-            padding: 30px;
-            text-align: center;
+        nav ul li a.active {
+            font-weight: bold;
+            color: #ff76b0 !important;
         }
 
         .main-artwork img {
-            width: 50%; /* Smaller preview */
             cursor: pointer;
             border: 5px solid #ff92c2;
             border-radius: 10px;
@@ -68,7 +41,6 @@
             transform: scale(1.05);
         }
 
-        /* Fullscreen Overlay */
         .fullscreen-overlay {
             display: none;
             position: fixed;
@@ -106,125 +78,79 @@
             background-color: #ff5fa0;
         }
 
-        /* Project Details */
         .project-details {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            padding: 20px;
-            background: #fff6fc;
-            border: 2px solid #ff92c2;
-            margin: 20px;
+            border: 5px solid #ff92c2;
             border-radius: 10px;
-        }
-
-        .project-details div {
-            flex: 1 1 300px;
-            margin: 10px;
-            text-align: center;
-        }
-
-        .project-details div h3 {
-            font-size: 2rem;
-            color: #ff92c2;
-        }
-
-        .project-details div p {
-            font-size: 1.5rem;
-        }
-
-        /* Navigation Buttons */
-        .navigation {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin: 30px;
-            padding: 20px;
-            background: #fff6fc;
-            border: 2px solid #ff92c2;
-            border-radius: 10px;
-        }
-
-        .previous-artwork a,
-        .next-artwork a {
-            text-decoration: none;
-            font-size: 1.8rem;
-            color: #ff92c2;
-            padding: 10px 20px;
-            border: 2px solid #ff92c2;
-            border-radius: 5px;
-            transition: background-color 0.3s, color 0.3s;
-        }
-
-        .previous-artwork a:hover,
-        .next-artwork a:hover {
-            background-color: #ff92c2;
-            color: #fff;
-        }
-
-        /* Footer */
-        footer {
             background-color: #ffe8f1;
-            padding: 30px;
-            text-align: center;
+            padding: 20px;
         }
 
-        footer .footer-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            max-width: 1400px;
-            margin: auto;
+        .btn-outline-primary {
+            color: #ff92c2 !important;
+            border-color: #ff92c2 !important;
         }
 
-        footer ul {
-            list-style: none;
-            padding: 0;
+        .btn-outline-primary:hover {
+            background-color: #ff92c2 !important;
+            color: white !important;
         }
 
-        footer ul li {
-            margin: 10px 0;
+        footer {
+            background: linear-gradient(180deg, #ffe8f1 0%, #fffbf1 100%);
+            padding: 50px 20px;
+        }
+
+        footer h3 {
+            color: #ff92c2;
         }
 
         footer ul li a {
+            color: #ff92c2 !important;
             text-decoration: none;
-            color: #333;
-            font-size: 1.8rem;
         }
 
-        footer .back-to-top {
-            padding: 20px 40px;
+        footer ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            padding: 10px 20px;
             background-color: #ff92c2;
             color: white;
             border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 1.8rem;
+            border-radius: 5px;
         }
 
-        footer .back-to-top:hover {
-            background-color: #ff5fa0;
+        .back-to-top:hover {
+            background-color: #ff76b0;
         }
     </style>
 </head>
 <body>
     <!-- Header Section -->
-    <header>
-        <img src="logo.png" alt="Logo" class="logo">
-        <nav>
-            <ul>
-                <li><a href="homepage.html">home</a></li>
-                <li><a href="about.html">about me</a></li>
-                <li><a href="work.html">my work</a></li>
-                <li><a href="contact.html">contact me</a></li>
-            </ul>
-        </nav>
+    <header class="bg-light py-3 border-bottom">
+        <div class="container text-center">
+            <img src="logo.png" alt="Sunny Studio Logo" class="img-fluid" style="max-width: 300px;">
+            <nav>
+                <ul class="nav justify-content-center">
+                    <li class="nav-item"><a class="nav-link" href="homepage.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About Me</a></li>
+                    <li class="nav-item"><a class="nav-link" href="work.html">My Work</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact Me</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <!-- Main Artwork Section -->
-    <section class="main-artwork">
-        <img src="sushi main.png" alt="Sushi for Breakfast" onclick="openFullscreen('sushi main.png')">
+    <section class="main-artwork py-5">
+        <div class="container text-center">
+            <img src="sushi main.png" alt="Sushi for Breakfast" class="img-fluid" onclick="openFullscreen('sushi main.png')">
+        </div>
     </section>
 
     <!-- Fullscreen Overlay -->
@@ -234,63 +160,66 @@
     </div>
 
     <!-- Project Details -->
-    <section class="project-details">
-        <div>
-            <h3>NAME</h3>
-            <p>Sushi for Breakfast</p>
-        </div>
-        <div>
-            <h3>PROJECT TYPE</h3>
-            <p>Personal Project</p>
-        </div>
-        <div>
-            <h3>TOOLS USED</h3>
-            <p>iPad Air Gen 5</p>
-        </div>
-        <div>
-            <h3>ROLE</h3>
-            <p>Procreate</p>
-        </div>
-        <div>
-            <h3>YEAR</h3>
-            <p>2023</p>
+    <section class="project-details py-5">
+        <div class="container text-center project-details">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <h3>NAME</h3>
+                    <p>Sushi for Breakfast</p>
+                </div>
+                <div class="col-md-4">
+                    <h3>PROJECT TYPE</h3>
+                    <p>Personal Project</p>
+                </div>
+                <div class="col-md-4">
+                    <h3>TOOLS USED</h3>
+                    <p>iPad Air Gen 5</p>
+                </div>
+                <div class="col-md-4">
+                    <h3>ROLE</h3>
+                    <p>Procreate</p>
+                </div>
+                <div class="col-md-4">
+                    <h3>YEAR</h3>
+                    <p>2023</p>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Navigation Buttons -->
-    <section class="navigation">
-        <div class="previous-artwork">
-            <a href="work5.html">&larr; Previous Artwork</a>
-        </div>
-        <div class="next-artwork">
-            <a href="work7.html">Next Artwork &rarr;</a>
+    <section class="navigation py-4">
+        <div class="container d-flex justify-content-between">
+            <a href="work5.html" class="btn btn-outline-primary">&larr; Previous Artwork</a>
+            <a href="work7.html" class="btn btn-outline-primary">Next Artwork &rarr;</a>
         </div>
     </section>
 
     <!-- Footer Section -->
-    <footer>
-        <div class="footer-content">
-            <div class="sitemap">
-                <h3>Sitemap:</h3>
-                <ul>
-                    <li><a href="homepage.html">home</a></li>
-                    <li><a href="about.html">about + resume</a></li>
-                    <li><a href="work.html">my work</a></li>
-                    <li><a href="contact.html">contact me</a></li>
-                </ul>
+    <footer class="text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>Sitemap:</h3>
+                    <ul class="list-unstyled">
+                        <li><a href="homepage.html">Home</a></li>
+                        <li><a href="about.html">About + Resume</a></li>
+                        <li><a href="work.html">My Work</a></li>
+                        <li><a href="contact.html">Contact Me</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h3>Follow Me:</h3>
+                    <ul class="list-unstyled">
+                        <li><a href="https://www.instagram.com/sxnnystudio/"><i class="fab fa-instagram"></i> Instagram</a></li>
+                        <li><a href="https://www.tiktok.com/@a.xsata"><i class="fab fa-tiktok"></i> TikTok</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="socials">
-                <h3>Follow Me:</h3>
-                <ul>
-                    <li><a href="https://www.instagram.com/sxnnystudio/">Instagram</a></li>
-                    <li><a href="https://www.tiktok.com/@a.xsata">TikTok</a></li>
-                </ul>
-            </div>
+            <button class="back-to-top mt-4" onclick="scrollToTop()">Back to Top</button>
         </div>
-        <button class="back-to-top" onclick="scrollToTop()">Back to Top</button>
     </footer>
 
-    <!-- JavaScript for Fullscreen and Back to Top -->
     <script>
         function openFullscreen(imageSrc) {
             const overlay = document.getElementById("fullscreenOverlay");
@@ -311,5 +240,6 @@
             });
         }
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

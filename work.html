@@ -4,14 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Work - Sunny Studio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Micro+5&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* General Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
             font-family: 'Courier New', Courier, monospace;
             background-color: #FFF5FD;
@@ -19,38 +15,21 @@
             overflow-x: hidden;
         }
 
-        /* Header */
-        header {
-            background-color: #ffe8f1;
-            padding: 20px;
-            border-bottom: 2px solid #ff92c2;
-            text-align: center;
-        }
-
-        .logo {
-            width: 100px;
-            height: auto;
-            margin-bottom: 10px;
-        }
-
-        nav ul {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-            gap: 30px;
+        h1, h2, h3 {
+            font-family: 'Micro 5', sans-serif;
         }
 
         nav ul li a {
+            color: #ff92c2 !important;
             text-decoration: none;
-            font-size: 1.8rem;
-            color: #333;
+            font-size: 2rem;
         }
 
-        nav ul li a:hover {
-            color: #ff92c2;
+        nav ul li a.active {
+            font-weight: bold;
+            color: #ff76b0 !important;
         }
 
-        /* Work Section */
         .work-section {
             min-height: 100vh;
             padding: 50px 20px;
@@ -64,11 +43,17 @@
         }
 
         .work-gallery {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 50px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
             max-width: 1200px;
             margin: 0 auto;
+        }
+
+        .work-gallery a {
+            flex: 1 1 calc(33.333% - 40px); /* Three per row */
+            max-width: calc(33.333% - 40px);
         }
 
         .work-gallery img {
@@ -83,68 +68,69 @@
             transition: transform 0.3s ease;
         }
 
-        /* Footer */
+        @media (max-width: 768px) {
+            .work-gallery a {
+                flex: 1 1 calc(50% - 20px); /* Two per row */
+                max-width: calc(50% - 20px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .work-gallery a {
+                flex: 1 1 100%; /* One per row */
+                max-width: 100%;
+            }
+        }
+
         footer {
-            background-color: #ffe8f1;
-            padding: 30px;
-            text-align: center;
+            background: linear-gradient(180deg, #ffe8f1 0%, #fffbf1 100%);
+            padding: 50px 20px;
         }
 
-        footer .footer-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            max-width: 1400px;
-            margin: auto;
-        }
-
-        footer ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        footer ul li {
-            margin: 10px 0;
-        }
-
-        footer ul li a {
-            text-decoration: none;
-            color: #333;
-            font-size: 1.8rem;
-        }
-
-        footer ul li a:hover {
+        footer h3 {
             color: #ff92c2;
         }
 
-        footer .back-to-top {
-            padding: 20px 40px;
+        footer ul li a {
+            color: #ff92c2 !important;
+            text-decoration: none;
+        }
+
+        footer ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            padding: 10px 20px;
             background-color: #ff92c2;
             color: white;
             border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 1.8rem;
+            border-radius: 5px;
         }
 
-        footer .back-to-top:hover {
-            background-color: #ff5fa0;
+        .back-to-top:hover {
+            background-color: #ff76b0;
         }
     </style>
 </head>
 <body>
     <!-- Header Section -->
-    <header>
-        <img src="logo.png" alt="Logo" class="logo">
-        <nav>
-            <ul>
-                <li><a href="homepage.html">home</a></li>
-                <li><a href="about.html">about me</a></li>
-                <li><a href="work.html">my work</a></li>
-                <li><a href="contact.html">contact me</a></li>
-            </ul>
-        </nav>
+    <header class="bg-light py-3 border-bottom">
+        <div class="container text-center">
+            <img src="logo.png" alt="Sunny Studio Logo" class="img-fluid" style="max-width: 300px;">
+            <nav>
+                <ul class="nav justify-content-center">
+                    <li class="nav-item"><a class="nav-link" href="homepage.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About Me</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="work.html">My Work</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact Me</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <!-- Work Section -->
@@ -185,26 +171,28 @@
     </section>
 
     <!-- Footer Section -->
-    <footer>
-        <div class="footer-content">
-            <div class="sitemap">
-                <h3>Sitemap:</h3>
-                <ul>
-                    <li><a href="homepage.html">home</a></li>
-                    <li><a href="about.html">about + resume</a></li>
-                    <li><a href="work.html">my work</a></li>
-                    <li><a href="contact.html">contact me</a></li>
-                </ul>
+    <footer class="text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>Sitemap:</h3>
+                    <ul class="list-unstyled">
+                        <li><a href="homepage.html">Home</a></li>
+                        <li><a href="about.html">About + Resume</a></li>
+                        <li><a href="work.html">My Work</a></li>
+                        <li><a href="contact.html">Contact Me</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h3>Follow Me:</h3>
+                    <ul class="list-unstyled">
+                        <li><a href="https://www.instagram.com/sxnnystudio/"><i class="fab fa-instagram"></i> Instagram</a></li>
+                        <li><a href="https://www.tiktok.com/@a.xsata"><i class="fab fa-tiktok"></i> TikTok</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="socials">
-                <h3>Follow Me:</h3>
-                <ul>
-                    <li><a href="https://www.instagram.com/sxnnystudio/">Instagram</a></li>
-                    <li><a href="https://www.tiktok.com/@a.xsata">TikTok</a></li>
-                </ul>
-            </div>
+            <button class="back-to-top mt-4" onclick="scrollToTop()">Back to Top</button>
         </div>
-        <button class="back-to-top" onclick="scrollToTop()">Back to Top</button>
     </footer>
 
     <!-- JavaScript for Back to Top -->
@@ -216,5 +204,6 @@
             });
         }
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
